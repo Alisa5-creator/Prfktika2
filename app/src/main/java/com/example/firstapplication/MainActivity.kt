@@ -26,6 +26,10 @@ import androidx.compose.ui.text.style.TextIndent
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.compose.foundation.BorderStroke
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -120,5 +124,32 @@ fun ComposeTexts(modifier: Modifier = Modifier) {
 fun ComposeTextsPreview() {
     FirstApplicationTheme {
         ComposeTexts()
+    }
+}
+
+@Composable
+fun GrayButton(modifier: Modifier = Modifier) {
+    Button(
+        onClick = {},
+        modifier = modifier.fillMaxWidth(),
+        shape = RoundedCornerShape(16.dp),
+        border = BorderStroke(2.dp, Color.Gray),
+        elevation = ButtonDefaults.buttonElevation(
+            defaultElevation = 4.dp
+        ),
+        colors = ButtonDefaults.buttonColors(
+            containerColor = Color.LightGray,
+            contentColor = Color.Black
+        ),
+    ) {
+        Text(text = "Нажми на меня", fontSize = 18.sp)
+    }
+}
+
+@Preview(name = "portrait", showSystemUi = true)
+@Composable
+fun ButtonPreview() {
+    FirstApplicationTheme {
+        GrayButton()
     }
 }
