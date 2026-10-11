@@ -50,6 +50,16 @@ fun GreetingPreview() {
 fun Hello(name: String?, modifier: Modifier = Modifier) {
     Text(
         text = if (name != null) "Привет, $name!" else "Имя не задано",
-        modifier = modifier
+        modifier = modifier.fillMaxSize()
     )
+}
+
+@Preview(name = "portrait", showSystemUi = true)
+@Preview(name = "landscape", showSystemUi = true, device = "spec:width=411dp,height=891dp,orientation=landscape")
+@Preview(name = "round", showSystemUi = true, showBackground = true, backgroundColor = 0xFFFFFF00, device = "spec:width=200dp,height=200dp,dpi=320,isRound=true")
+@Composable
+fun HelloPreview() {
+    FirstApplicationTheme {
+        Hello("Алиса")
+    }
 }
