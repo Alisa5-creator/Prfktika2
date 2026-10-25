@@ -38,10 +38,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             FirstApplicationTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Hello(
-                        name = null,
-                        modifier = Modifier.padding(innerPadding)
-                    )
+                    WaterTracker(modifier = Modifier.padding(innerPadding))
                 }
             }
         }
@@ -153,3 +150,4 @@ fun ButtonPreview() {
         GrayButton()
     }
 }
+
